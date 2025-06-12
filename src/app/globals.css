@@ -1,0 +1,334 @@
+/* src/app/globals.css */
+
+/* Genel Sıfırlama ve Temel Stiller */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Daha modern font */
+  background-color: #f8f9fa; /* Daha açık arka plan */
+  color: #343a40; /* Koyu gri metin */
+  line-height: 1.6;
+}
+
+/* Ana Konteyner */
+.menu-container {
+  max-width: 900px; /* Daha geniş alan */
+  margin: 30px auto; /* Üstten alttan biraz boşluk */
+  padding: 25px;
+  border-radius: 12px; /* Daha yuvarlak köşeler */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Daha belirgin gölge */
+  background-color: #ffffff;
+}
+
+/* Başlık */
+.menu-title {
+  text-align: center;
+  color: #212529; /* Daha koyu başlık rengi */
+  margin-bottom: 30px;
+  font-size: 2.5em; /* Büyük başlık */
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Kategori Butonları Konteyneri */
+.category-buttons-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Küçük ekranlarda alt alta geçiş */
+  gap: 10px; /* Butonlar arası boşluk */
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e9ecef; /* Daha belirgin alt çizgi */
+  padding-bottom: 15px;
+}
+
+/* Kategori Butonu */
+.category-button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px; /* Hap şeklinde butonlar */
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05em;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Yumuşak geçişler */
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08); /* Hafif gölge */
+}
+
+.category-button:hover {
+  transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+}
+
+.category-button.active {
+  background-color: #007bff; /* Mavi renk */
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Aktif butona daha belirgin gölge */
+}
+
+.category-button:not(.active) {
+  background-color: #e2e6ea; /* Açık gri */
+  color: #495057; /* Koyu gri metin */
+}
+
+/* Menü Öğeleri Listesi (Ek bir sınıf eklemedik, gerekirse eklenir) */
+/* .menu-items-list {
+} */
+
+/* Menü Öğesi */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Görsel ve metin arası boşluk */
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Menü öğesi gölgesi */
+  transition: transform 0.2s ease; /* Üzerine gelince animasyon */
+}
+
+.menu-item:hover {
+  transform: translateY(-3px); /* Hafif yukarı kalkma */
+}
+
+/* Menü Öğesi Görseli */
+.menu-item-image {
+  width: 100px; /* Daha büyük görsel */
+  height: 100px; /* Daha büyük görsel */
+  object-fit: cover;
+  border-radius: 8px; /* Daha yuvarlak köşeler */
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Menü Öğesi Detayları */
+.menu-item-details {
+  flex-grow: 1;
+}
+
+.menu-item-name {
+  margin: 0 0 8px 0;
+  color: #343a40;
+  font-size: 1.4em; /* Daha belirgin isim */
+  font-weight: 600;
+}
+
+.menu-item-description {
+  margin: 0 0 12px 0;
+  color: #6c757d; /* Açık gri açıklama */
+  font-size: 0.95em;
+}
+
+/* Menü Öğesi Footer (Fiyat ve Tarih) */
+.menu-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px; /* Üstten boşluk */
+}
+
+.menu-item-price {
+  font-weight: bold;
+  color: #28a745; /* Yeşil fiyat rengi */
+  font-size: 1.3em; /* Daha büyük fiyat */
+}
+
+.menu-item-date {
+  font-size: 0.85em;
+  color: #adb5bd; /* Açık gri tarih */
+}
+
+/* Mesajlar (Menü bulunamadı, hata mesajı) */
+.no-menu-message,
+.error-message {
+  text-align: center;
+  padding: 40px 20px; /* Daha geniş boşluk */
+  font-size: 1.2em;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: #dc3545; /* Kırmızı hata */
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* --- Responsive Ayarlamalar (Mobil Duyarlılık) --- */
+
+/* Küçük ekranlar için (örneğin 768px altı tabletler ve mobil cihazlar) */
+@media (max-width: 768px) {
+  .menu-container {
+    margin: 20px 15px; /* Kenarlardan daha az boşluk */
+    padding: 15px;
+  }
+
+  .menu-title {
+    font-size: 2em; /* Mobil için daha küçük başlık */
+    margin-bottom: 20px;
+  }
+
+  .category-button {
+    padding: 10px 18px;
+    font-size: 1em;
+  }
+
+  .menu-item {
+    flex-direction: column; /* Mobil için öğeler alt alta */
+    text-align: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .menu-item-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu-item-name {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+
+  .menu-item-description {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+
+  .menu-item-footer {
+    flex-direction: column; /* Fiyat ve tarih alt alta */
+    gap: 5px;
+    width: 100%; /* Tam genişlik */
+  }
+
+  .menu-item-price {
+    font-size: 1.2em;
+  }
+
+  .menu-item-date {
+    font-size: 0.8em;
+  }
+
+  .no-menu-message,
+  .error-message {
+    padding: 20px;
+    font-size: 1em;
+  }
+}
+
+/* Çok küçük ekranlar için (örneğin 480px altı telefonlar) */
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 1.8em;
+  }
+
+  .category-buttons-container {
+    gap: 8px;
+  }
+
+  .category-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .menu-item-image {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* --- Yükleme Durumu Stilleri --- */
+/* --- Yükleme Durumu Stilleri --- */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh; /* Ekranın yarısı kadar yüksek olsun */
+  font-size: 1.5em;
+  color: #6c757d;
+  gap: 20px; /* Spinner ve metin arası boşluk */
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* Açık gri kenarlık */
+  border-top: 8px solid #007bff; /* Mavi üst kenarlık */
+  border-radius: 50%; /* Yuvarlak şekil */
+  width: 60px;
+  height: 60px;
+  animation: spin 1.2s linear infinite; /* Sonsuz dönme animasyonu */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- Boş Kategori Mesajı Stili --- */
+.empty-category-message {
+  text-align: center;
+  padding: 30px;
+  border: 1px dashed #ced4da; /* Kesikli kenarlık */
+  border-radius: 8px;
+  background-color: #f1f3f5; /* Hafif arka plan */
+  color: #495057;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.empty-category-message p {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.empty-category-message p:last-child {
+  margin-bottom: 0;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+/* --- Animasyonlar --- */
+
+/* Fade-in From Bottom (Aşağıdan belirme) */
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in (Sadece belirme) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Menü öğelerine animasyon uygulama */
+.menu-item {
+  /* Mevcut stillerinizin üzerine ekleyin */
+  animation: fadeInFromBottom 0.5s ease-out forwards; /* Her öğe için animasyon */
+  /* Animasyon gecikmesini her öğe için ayarlayacağız */
+}
+
+/* Menü öğeleri için gecikme (JavaScript ile dinamik olarak atanacak) */
+/*
+.menu-item.animate-0 { animation-delay: 0s; }
+.menu-item.animate-1 { animation-delay: 0.1s; }
+.menu-item.animate-2 { animation-delay: 0.2s; }
+... bu şekilde devam edebilir, ancak JavaScript ile daha iyi kontrol edeceğiz.
+*/
+
+/* Kategori butonlarına animasyon uygulama (isteğe bağlı) */
+.category-button {
+    /* Mevcut stillerinizin üzerine ekleyin */
+    animation: fadeIn 0.4s ease-out forwards;
+}
